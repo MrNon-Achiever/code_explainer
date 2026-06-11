@@ -1,0 +1,9 @@
+# No external dependencies required
+# This project uses only Python standard library
+
+# Python 3.7+ is required
+python>=3.7
+
+# Optional: For better code formatting (not required for functionality)
+# black>=21.0
+# flake8>=3.8

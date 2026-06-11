@@ -1,0 +1,125 @@
+{
+  "generator": {
+    "default_output_directory": "./course-output",
+    "default_accent_color": "#D94F30",
+    "verbose_output": false,
+    "max_files_to_analyze": 1000,
+    "max_file_size_mb": 10,
+    "excluded_directories": [
+      "__pycache__",
+      ".git",
+      ".vscode",
+      ".idea",
+      "node_modules",
+      "venv",
+      "env",
+      ".env"
+    ],
+    "excluded_files": [
+      "*.pyc",
+      "*.pyo",
+      "*.pyd",
+      ".gitignore",
+      ".dockerignore",
+      "LICENSE",
+      "README.md"
+    ]
+  },
+  "course": {
+    "title_template": "Codebase Course: {project_name}",
+    "modules": [
+      {
+        "id": "module-1",
+        "name": "Introduction",
+        "description": "What the project does and how it's structured"
+      },
+      {
+        "id": "module-2",
+        "name": "Architecture",
+        "description": "Main components and their relationships"
+      },
+      {
+        "id": "module-3",
+        "name": "Components",
+        "description": "Key classes and their responsibilities"
+      },
+      {
+        "id": "module-4",
+        "name": "Data Flow",
+        "description": "How data moves through the system"
+      },
+      {
+        "id": "module-5",
+        "name": "Interactive Elements",
+        "description": "Key functions and usage patterns"
+      }
+    ],
+    "accent_colors": {
+      "vermillion": {
+        "accent": "#D94F30",
+        "hover": "#C4432A",
+        "light": "#FDEEE9",
+        "muted": "#E8836C"
+      },
+      "coral": {
+        "accent": "#E06B56",
+        "hover": "#C85A47",
+        "light": "#FDECEA",
+        "muted": "#E89585"
+      },
+      "teal": {
+        "accent": "#2A7B9B",
+        "hover": "#1F6280",
+        "light": "#E4F2F7",
+        "muted": "#5A9DB8"
+      },
+      "amber": {
+        "accent": "#D4A843",
+        "hover": "#BF9530",
+        "light": "#FDF5E0",
+        "muted": "#E0C070"
+      },
+      "forest": {
+        "accent": "#2D8B55",
+        "hover": "#226B41",
+        "light": "#E8F5EE",
+        "muted": "#5AAD7A"
+      }
+    }
+  },
+  "analysis": {
+    "extract_docstrings": true,
+    "extract_decorators": true,
+    "extract_type_hints": true,
+    "analyze_imports": true,
+    "identify_main_files": true,
+    "calculate_complexity": true,
+    "max_methods_per_class": 50,
+    "max_functions_per_module": 100
+  },
+  "output": {
+    "generate_css": true,
+    "generate_js": true,
+    "generate_html": true,
+    "generate_build_script": true,
+    "minify_output": false,
+    "include_source_maps": false
+  },
+  "features": {
+    "interactive_quizzes": true,
+    "code_translations": true,
+    "architecture_diagrams": true,
+    "data_flow_animations": true,
+    "glossary_tooltips": true,
+    "responsive_design": true,
+    "keyboard_navigation": true,
+    "progress_tracking": true
+  },
+  "performance": {
+    "max_concurrent_analyses": 4,
+    "timeout_seconds": 300,
+    "memory_limit_mb": 1024,
+    "cache_analysis_results": true,
+    "cache_duration_hours": 24
+  }
+}

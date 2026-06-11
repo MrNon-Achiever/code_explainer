@@ -1,0 +1,12 @@
+# Requirements for Streamlit web interface
+# Install with: pip install -r requirements_streamlit.txt
+
+# Core requirements
+python>=3.7
+streamlit>=1.0
+pandas>=1.0
+numpy>=1.0
+
+# Optional: For better code analysis
+# ast-decompiler>=0.5
+# libcst>=0.4

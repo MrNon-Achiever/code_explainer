@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # CLI version - run commands
+  cli:
+    build: .
+    volumes:
+      # Mount your codebase to analyze
+      - ./your-project:/app/input:ro
+      # Mount output directory
+      - ./output:/app/output
+    command: ["python", "main.py", "/app/input", "/app/output"]
+    # Override command for specific analysis
+    # command: ["python", "main.py", "/app/input", "/app/output", "-v"]
+  
+  # Streamlit web interface
+  web:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mount your codebase to analyze
+      - ./your-project:/app/input:ro
+      # Mount output directory
+      - ./output:/app/output
+    command: ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  
+  # Example with example codebase
+  example:
+    build: .
+    volumes:
+      - ./output:/app/output
+    command: ["python", "example_usage.py"]
+
+# Usage:
+# 1. CLI analysis:
+#    docker-compose run cli
+#
+# 2. Web interface:
+#    docker-compose up web
+#    # Then open http://localhost:8501
+#
+# 3. Example usage:
+#    docker-compose run example
